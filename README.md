@@ -1,5 +1,4 @@
-# Fabflix
-###### A movie shopping website
+# Fabflix: a movie shopping website
 
 ### Functionalities:
 #### Log in (with reCaptcha)
@@ -11,7 +10,7 @@
 #### Add movies to shopping cart and checkout
 
 ### Softwares used:
-Tomcat (server), MySQL (database), AWS
+MySQL (database), Tomcat (server), Apache 2 (load balancer), AWS, Google Cloud Platform
 
 ### Languages used:
 Java, JavaScript, CSS, HTML
