@@ -7,7 +7,7 @@
 ### Browse movies by (first letter of) name or genre:
 ![browse movies](https://github.com/Mescetina/Fabflix/blob/master/screenshots/browse-movies.png)
 ###### <br/>
-### Search movies by name (with autocomplete), year, director, or actor:
+### Search movies by name (fuzzy search with autocomplete), year, director, or actor:
 ![search movies](https://github.com/Mescetina/Fabflix/blob/master/screenshots/search-movies.png)
 ###### <br/>
 ### View list of movies (i.e. search results):
