@@ -31,7 +31,7 @@ public class LoginFilter implements Filter
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		if (isUrlAllowedWithoutLogin(httpRequest.getRequestURI()) || httpRequest.getSession().getAttribute("user") != null)
 		{
-			if (httpRequest.getRequestURI().endsWith("project5/"))
+			if (httpRequest.getRequestURI().endsWith("fabflix/"))
 			{
 				String rootPath = httpRequest.getContextPath();
 				httpResponse.sendRedirect(rootPath + "/index.html");
