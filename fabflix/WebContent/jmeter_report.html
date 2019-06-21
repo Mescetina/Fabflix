@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: linen;
+}
+
+td {
+    border-top-style: solid;
+}
+</style>
+</head>
+<body>
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Single-instance version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="image/8080_1_thread.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>228</td>
+    <td>26.578026224072672</td>
+    <td>25.999607386071157</td>
+    <td>The average query time was within our expectation. Since there's only one thread, the time is relatively short.</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="image/8080_10thread.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>377</td>
+    <td>149.85338719303557</td>
+    <td>148.08806629788038</td>
+    <td>The average query time was unexpected. This case should be faster than case 4 and case 5. We think the reason might be that we had to go through all user inputs twice for prepared statements (oncee for query construction, and once for filling in the actual inputs). Thus, the extra time it takes to process the code offsets the time prepared statements and connection pooling save.</td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTPS/10 threads</td>
+    <td><img src="image/8443.png" alt="Graph Results Screenshot Case 3" style="width:304px;height:228px;"></td>
+    <td>548</td>
+    <td>129.76322352838759</td>
+    <td>127.18865471915215</td>
+    <td>The average query time was within our expectation. HTTPS requests usually take longer time than HTTP requests.</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No prepared statements</td>
+    <td><img src="image/8080_no_prep.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>347</td>
+    <td>113.14833928046934</td>
+    <td>111.78557877062832</td>
+    <td>The average query time was within our expectation. This case should be slower than case 2, but due to the reason stated in case 2, it's actually faster.</td>
+  </tr>
+  <tr>
+    <td>Case 5: HTTP/10 threads/No connection pooling</td>
+    <td><img src="image/8080_no_pool.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>344</td>
+    <td>127.28087993830432</td>
+    <td>122.62052073012869</td>
+    <td>The average query time was within our expectation. This case should be slower than case 2, but due to the reason stated in case 2, it's actually faster.</td>
+  </tr>
+
+</table> 
+
+
+<table style="width:100%">
+  <tr style="font-weight:bold; background-color: orange">
+    <td width="300px">Scaled version cases</td>
+    <td>Graph Results Screenshot</td>
+    <td>Average Query Time(ms)</td>
+    <td>Average Search Servlet Time(ms)</td>
+    <td>Average JDBC Time(ms)</td>
+    <td>Analysis</td>
+  </tr>
+  <tr>
+    <td>Case 1: HTTP/1 thread</td>
+    <td><img src="image/80_1_thread.png" alt="Graph Results Screenshot Case 1" style="width:304px;height:228px;"></td>
+    <td>234</td>
+    <td>26.978307445495836</td>
+    <td>26.213220520817563</td>
+    <td>The average query time was unexpected. This case should be faster than case 1 of the single-instance version. We think the reason might be that the use case of a single user (one thread) has uncertainty.</td>
+  </tr>
+  <tr>
+    <td>Case 2: HTTP/10 threads</td>
+    <td><img src="image/80_10thread.png" alt="Graph Results Screenshot Case 2" style="width:304px;height:228px;"></td>
+    <td>291</td>
+    <td>55.434332618470855</td>
+    <td>54.57051755715367</td>
+    <td>The average query time was unexpected. This case was substantially faster than case 2 of the single-instance version, which is expected. However, it should be faster than case 3. We think the reason might be that we had to go through all user inputs twice for prepared statements (oncee for query construction, and once for filling in the actual inputs). Thus, the extra time it takes to process the code offsets the time prepared statements save.</td>
+ /td>
+  </tr>
+  <tr>
+    <td>Case 3: HTTP/10 threads/No prepared statements</td>
+    <td><img src="image/80_no_prep.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>270</td>
+    <td>54.099082828538984</td>
+    <td>52.88044034405753</td>
+    <td>The average query time was within our expectation. This case was faster than case 4 of the single-instance version, which is expected. However, it should be slower than case 2, but due to the reason stated in case 2, it's actually faster.</td>
+  </tr>
+  <tr>
+    <td>Case 4: HTTP/10 threads/No connection pooling</td>
+    <td><img src="image/80_no_pool.png" alt="Graph Results Screenshot Case 4" style="width:304px;height:228px;"></td>
+    <td>356</td>
+    <td>129.07003508213475</td>
+    <td>123.2236666029523</td>
+    <td>The average query time was unexpected. This case was slower than case 2, which is expected. However, it should be faster than case 5 of the single-instance version. We think the reason might be that the time for load balancer to process requests offsets the time load balancer saves.</td>
+  </tr>
+
+</table> 
+
+</body>
+</html>

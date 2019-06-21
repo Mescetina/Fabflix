@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        data-integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" data-crossorigin="anonymous">
+
+  <title>Checkout to Fablix</title>
+</head>
+
+<body>
+  <h2>Checkout</h2>
+
+  <form id="checkout_form" method="post" action="#">
+    <label><b>Credit Card Number</b></label>
+    <input type="text" placeholder="Enter your credit card number" name="cid">
+    <br>
+    <label><b>First Name</b></label>
+    <input type="text" placeholder="Enter your first name" name="first">
+    <br>
+    <label><b>Last Name</b></label>
+    <input type="text" placeholder="Enter your last name" name="last">
+    <br>
+    <label><b>Expiration date</b></label>
+    <input type="text" placeholder="Enter your card's expiration date" name="expire">
+    <br>
+    <input type="submit" value="Checkout">
+  </form>
+
+  <div id="login_error_message"></div>
+
+  <!-- Load jQuery and Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+  <!-- Load checkout.js -->
+  <script src="checkout.js"></script>
+</body>
+</html>

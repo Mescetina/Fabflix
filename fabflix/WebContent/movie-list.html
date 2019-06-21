@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" 
+			  href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+			  data-integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+			  data-crossorigin="anonymous">
+		<title>Movie List</title>
+	</head>
+	<body>
+		<h1>Movies</h1>
+		<table id=movie_table class="table table-striped">
+			<thead>
+			<tr>
+				<th><a href="" id="titleSort" style="color:black;">Title↕</a></th>
+        		<th>Year</th>
+        		<th>Director</th>
+        		<th>Genres</th>
+        		<th>Stars</th>
+        		<th><a href="" id="ratingSort" style="color:black;">Rating↕</a></th>
+        		<th></th>
+        	</tr>
+        	</thead>
+        	<tbody id=movie_table_body></tbody>
+		</table>
+		<div id="btnLayer">
+			<button class="btn btn-info dropdown-toggle" data-toggle="dropdown">movies per page</button>
+   		   	<ul class="dropdown-menu" role="menu">
+      			<li><a href="" id="tenBtn" style="color:black">10</a></li>
+      			<li><a href="" id="twtBtn" style="color:black">20</a></li>
+      			<li><a href="" id="fftBtn" style="color:black">50</a></li>
+      			<li><a href="" id="hddBtn" style="color:black">100</a></li>
+      			</ul>
+      		<a id="prevBtn" href="" class="btn btn-info">Prev</a>
+      		<a id="nextBtn" href="" class="btn btn-info">Next</a>
+      		<a id="goBack" href="/project5/index.html" class="btn btn-info">Go Back</a>
+      		<a id="coBtn" href="/project5/shopping-cart.html" class="btn btn-info">Check Out</a>
+      	</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" data-integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" data-crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" data-integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" data-crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" data-integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" data-crossorigin="anonymous"></script>
+		<script src="movie-list.js"></script>
+	</body>
+</html>
