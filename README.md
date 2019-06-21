@@ -1,6 +1,6 @@
 # Fabflix: a movie shopping website
 ###### <br/>
-## Functionalities:
+## Functionalities
 ### Log in (with reCaptcha):
 ![log in](https://github.com/Mescetina/Fabflix/blob/master/screenshots/login.png)
 ###### <br/>
@@ -22,7 +22,7 @@
 ### Add movies to shopping cart and checkout:
 ![checkout](https://github.com/Mescetina/Fabflix/blob/master/screenshots/checkout.png)
 ###### <br/>
-## Softwares used:
+## Softwares Used
 MySQL (database), Tomcat (server), Apache 2 (load balancer), AWS, Google Cloud Platform
-## Languages used:
+## Languages Used
 Java, JavaScript, CSS, HTML
