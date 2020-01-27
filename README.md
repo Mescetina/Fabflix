@@ -2,6 +2,7 @@
 ###### <br/>
 ## Functionalities
 ### Log in (with reCaptcha):
+sample username: a@email.com; password: a2
 ![log in](https://github.com/Mescetina/Fabflix/blob/master/screenshots/login.png)
 ###### <br/>
 ### Browse movies by (first letter of) name or genre:
